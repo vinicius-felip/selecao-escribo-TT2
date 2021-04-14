@@ -1,0 +1,230 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background-color: #629bd5;
+  overflow-y: hidden;
+}
+
+#board {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 0.1vmin solid black;
+  border-radius: 4px;
+  height: 98vmin;
+  width: 100vmin;
+}
+
+.box {
+  float: left;
+  height: 9.5vmin;
+  width: 9.68vmin;
+  border: 0.1vmin solid black;
+  text-align: start;
+  line-height: 9.601vmin;
+  font-size: 2.5vmin;
+}
+
+#board svg {
+  position: absolute;
+}
+
+svg#snakeladders g.ladders-big {
+  stroke: #8b4513;
+  stroke-width: 4;
+  stroke-linecap: round;
+}
+svg#snakeladders g.ladders-small {
+  stroke: #8b4513;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+}
+
+#player-container {
+  position: fixed;
+  top: 1vmin;
+  left: 2vmin;
+  height: 45vmin;
+  width: 45vmin;
+  border: 0.2vmin;
+  border-radius: 10px;
+  background-color: #43436b;
+  text-align: center;
+  font-size: 3.5vmin;
+  -webkit-box-shadow: 9px 7px 5px rgba(50, 50, 50, 0.77);
+  -moz-box-shadow: 9px 7px 5px rgba(50, 50, 50, 0.77);
+  box-shadow: 9px 7px 5px rgba(50, 50, 50, 0.77);
+}
+
+#player-container p {
+  margin: 0;
+  padding: 1rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  background-color: white;
+}
+
+#cube_outer {
+  height: 8vmin;
+  width: 8vmin;
+  perspective: 30vmin;
+  margin: auto;
+  margin-bottom: 6vmin;
+}
+
+.dados {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: all 0.75s linear;
+}
+
+.dados div {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+#front {
+  transform: translateZ(4vmin);
+}
+
+#back {
+  transform: rotateY(180deg) translateZ(4vmin);
+}
+
+#left {
+  transform: rotateY(-90deg) translateX(-4vmin);
+  transform-origin: left;
+}
+
+#right {
+  transform: rotateY(90deg) translateX(4vmin);
+  transform-origin: right;
+}
+
+#top {
+  transform: rotateX(-90deg) translateY(-4vmin);
+  transform-origin: top;
+}
+
+#bottom {
+  transform: rotateX(90deg) translateY(4vmin);
+  transform-origin: bottom;
+}
+
+img {
+  height: 100.3%;
+  width: 100.3%;
+}
+
+#jogarDados {
+  padding: 1vmin;
+  border-radius: 10px;
+  background-color: white;
+  -webkit-box-shadow: 9px 7px 5px rgba(50, 50, 50, 0.77);
+  -moz-box-shadow: 9px 7px 5px rgba(50, 50, 50, 0.77);
+  box-shadow: 9px 7px 5px rgba(50, 50, 50, 0.77);
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+#jogarDados:hover {
+  cursor: pointer;
+  background-color: grey;
+}
+
+.player {
+  position: absolute;
+  top: 90.9vmin;
+  left: 3vmin;
+  height: 6vmin;
+  width: 6vmin;
+  transition-duration: 0.4s;
+  transition-property: margin;
+}
+
+svg.piece g {
+  stroke-width: 4;
+  stroke: rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 2px 7px 5px rgba(50, 50, 50, 0.77);
+  -moz-box-shadow: 2px 7px 5px rgba(50, 50, 50, 0.77);
+  box-shadow: 2px 7px 5px rgba(50, 50, 50, 0.77);
+}
+#player-1 svg g{
+  fill: rgb(255, 29, 29);
+}
+#player-2 svg g{
+  fill: rgb(78, 29, 255);
+} 
+
+.player-avatar {
+  position: absolute;
+  left: 2vmin;
+  height: 10vmin;
+  width: 10vmin;
+  border: 0.2vmin;
+  border-radius: 10px;
+  background-color: #27f785;
+  text-align: center;
+  font-size: 3.5vmin;
+  -webkit-box-shadow: 9px 7px 5px rgba(50, 50, 50, 0.77);
+  -moz-box-shadow: 9px 7px 5px rgba(50, 50, 50, 0.77);
+  box-shadow: 9px 7px 5px rgba(50, 50, 50, 0.77);
+}
+
+.player-avatar:not(.active){
+  background-color: #545455;
+}
+
+.avatar-1 {
+  top: 57vmin;
+  fill: red
+}
+
+.avatar-2 {
+  top: 70vmin;
+  fill: rgb(78, 29, 255);
+}
+
+
+.info {
+  position: absolute;
+  right: 2vmin;
+  height: 5vmin;
+  width: 13vmin;
+  border: 0.2vmin;
+  border-radius: 10px;
+  background-color: #d3b611;
+  text-align: center;
+  font-size: 2vmin;
+  -webkit-box-shadow: 9px 7px 5px rgba(50, 50, 50, 0.77);
+  -moz-box-shadow: 9px 7px 5px rgba(50, 50, 50, 0.77);
+  box-shadow: 9px 7px 5px rgba(50, 50, 50, 0.77);
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.info p{
+  margin: 0;
+  margin-top: 1.5vmin;
+}
+
+.info:hover{
+  cursor: pointer;
+  background-color: #22a8a2;
+}
